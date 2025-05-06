@@ -1,0 +1,40 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+enum SaleMode {
+  LEILAO_SFI_EDITAL
+  LICITACAO_ABERTA
+  VENDA_DIRETA_ONLINE
+  VENDA_DIRETA
+}
+
+model Property {
+  id            Int            @id @default(autoincrement())
+  number        String
+  uf            String
+  city          String
+  neighborhood  String
+  address       String
+  description   String
+  created_at    DateTime       @default(now())
+  price_history PriceHistory[]
+}
+
+model PriceHistory {
+  id               Int      @id @default(autoincrement())
+  price            Float
+  evaluation_price Float
+  discount         Float
+  sale_mode        SaleMode
+  access_link      String
+  created_at       DateTime @default(now())
+  property_id      Int
+  property         Property @relation(fields: [property_id], references: [id])
+}
