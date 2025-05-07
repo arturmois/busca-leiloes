@@ -1,4 +1,4 @@
-import PropertyRepository from "./PropertyRepository";
+import PropertyRepository from "../infrastructure/PropertyRepository";
 
 export default class GetProperty {
     private propertyRepository: PropertyRepository;

@@ -1,5 +1,4 @@
-import Property from "./Property";
-import PropertyHistory from "./PropertyHistory";
+import Property from "../domain/Property";
 
 export default interface PropertyRepository {
     save(property: Property): Promise<void>;

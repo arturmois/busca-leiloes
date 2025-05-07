@@ -1,8 +1,8 @@
-import Mediator from "./Mediator";
-import Property from "./Property";
-import PropertyHistory from "./PropertyHistory";
-import PropertyHistoryRepository from "./PropertyHistoryRepository";
-import PropertyRepository from "./PropertyRepository";
+import Mediator from "../infrastructure/Mediator";
+import Property from "../domain/Property";
+import PropertyHistory from "../domain/PropertyHistory";
+import PropertyRepository from "../infrastructure/PropertyRepository";
+import PropertyHistoryRepository from "../infrastructure/PropertyHistoryRepository";
 
 export default class RegisterProperty {
     private propertyRepository: PropertyRepository;

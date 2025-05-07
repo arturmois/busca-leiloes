@@ -1,9 +1,9 @@
-import GetProperty from "../src/GetProperty";
-import RegisterProperty from "../src/RegisterProperty";
-import { PropertyRepositoryMemory } from "../src/PropertyRepository";
-import Mediator from "../src/Mediator";
-import RegisterPropertyHistory from "../src/RegisterPropertyHistory";
-import { PropertyHistoryRepositoryMemory } from "../src/PropertyHistoryRepository";
+import GetProperty from "../src/application/GetProperty";
+import RegisterProperty from "../src/application/RegisterProperty";
+import RegisterPropertyHistory from "../src/application/RegisterPropertyHistory";
+import { PropertyHistoryRepositoryMemory } from "../src/infrastructure/PropertyHistoryRepository";
+import { PropertyRepositoryMemory } from "../src/infrastructure/PropertyRepository";
+import Mediator from "../src/infrastructure/Mediator";
 
 let registerProperty: RegisterProperty;
 let registerPropertyHistory: RegisterPropertyHistory;

@@ -1,6 +1,5 @@
-import PropertyHistory from "./PropertyHistory";
-import PropertyHistoryRepository from "./PropertyHistoryRepository";
-
+import PropertyHistory from "../domain/PropertyHistory";
+import PropertyHistoryRepository from "../infrastructure/PropertyHistoryRepository";
 export default class RegisterPropertyHistory {
     constructor(private propertyHistoryRepository: PropertyHistoryRepository) {
     }
