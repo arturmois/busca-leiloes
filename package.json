@@ -4,9 +4,9 @@
   "main": "index.js",
   "description": "Aplicação para processamento e armazenamento de dados de imóveis em leilão da Caixa Econômica Federal",
   "scripts": {
-    "start": "tsx src/main.ts",
-    "dev": "tsx watch src/main.ts",
     "build": "tsc",
+    "start": "node dist/src/main.js",
+    "dev": "tsx watch src/main.ts",
     "migrate": "prisma migrate dev",
     "test": "jest"
   },

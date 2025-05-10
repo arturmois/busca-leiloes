@@ -1,19 +1,12 @@
-FROM node:20-alpine
+FROM node
 
-WORKDIR /app
-
-RUN addgroup -S appgroup && adduser -S appuser -G appgroup
-
-COPY package*.json .
-
-RUN npm install
+WORKDIR /src/usr/
 
 COPY . .
 
-RUN chown -R appuser:appgroup /app
-
-USER appuser
-
 EXPOSE 3001
+
+RUN npm i
+RUN npm run build
 
 CMD ["npm", "start"]
