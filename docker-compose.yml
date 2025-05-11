@@ -1,6 +1,6 @@
 services:
-  node:
-    container_name: node
+  app:
+    container_name: app
     build: .
     restart: always
     ports:
