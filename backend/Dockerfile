@@ -8,6 +8,10 @@ RUN npm ci
 
 COPY . .
 
+# Build TypeScript
+RUN npm run build
+
+# Production stage
 FROM node:18-alpine
 
 WORKDIR /app
