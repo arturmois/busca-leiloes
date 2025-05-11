@@ -20,52 +20,97 @@ git clone [URL_DO_REPOSITÓRIO]
 cd busca-leiloes
 ```
 
-2. Instale as dependências:
+2. Instale as dependências do backend:
 ```bash
+cd backend
 npm install
 ```
 
-3. Configure as variáveis de ambiente:
-Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis:
+3. Instale as dependências do frontend:
+```bash
+cd ../frontend
+npm install
+```
+
+4. Configure as variáveis de ambiente do backend:
+Crie um arquivo `.env` na pasta `backend` com as seguintes variáveis:
 ```env
 DATABASE_URL=postgresql://usuario:senha@localhost:5432/busca_leiloes
 ```
 
-4. Execute as migrações do banco de dados:
+5. Execute as migrações do banco de dados:
 ```bash
+cd backend
 npm run migrate
 ```
 
 ## Uso
 
-1. Para iniciar o processamento dos dados:
+### Backend
+
+1. Para iniciar o servidor backend:
 ```bash
+cd backend
 npm start
 ```
 
 2. Para executar em modo de desenvolvimento:
 ```bash
+cd backend
 npm run dev
+```
+
+### Frontend
+
+1. Para iniciar o servidor de desenvolvimento do frontend:
+```bash
+cd frontend
+npm run dev
+```
+
+2. Para build de produção:
+```bash
+cd frontend
+npm run build
 ```
 
 ## Funcionalidades
 
+### Backend
 - Processamento e normalização dos dados
 - Armazenamento em banco de dados PostgreSQL
 - API REST para consulta dos dados processados
+
+### Frontend
+- Interface web moderna e responsiva
+- Visualização dos dados de leilões
+- Filtros e busca avançada
+- Dashboard com estatísticas
 
 ## Estrutura do Projeto
 
 ```
 busca-leiloes/
-├── src/
-│   ├── controllers/    # Controladores da aplicação
-│   ├── models/        # Modelos do banco de dados
-│   ├── services/      # Serviços de negócio
-│   └── utils/         # Utilitários
-├── migrations/        # Migrações do banco de dados
-├── tests/            # Testes automatizados
-└── config/           # Configurações da aplicação
+├── backend/
+│   ├── src/
+│   │   ├── controllers/    # Controladores da aplicação
+│   │   ├── models/        # Modelos do banco de dados
+│   │   ├── services/      # Serviços de negócio
+│   │   └── utils/         # Utilitários
+│   ├── migrations/        # Migrações do banco de dados
+│   ├── tests/            # Testes automatizados
+│   └── config/           # Configurações da aplicação
+├── frontend/
+│   ├── src/
+│   │   ├── components/    # Componentes React
+│   │   ├── pages/        # Páginas da aplicação
+│   │   ├── services/     # Serviços de API
+│   │   ├── hooks/        # Custom hooks
+│   │   ├── contexts/     # Contextos React
+│   │   └── utils/        # Utilitários
+│   ├── public/           # Arquivos estáticos
+│   └── tests/            # Testes do frontend
+└── docker-compose.yml    # Configuração do Docker
 ```
 
 ## Contribuição
